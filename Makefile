@@ -1,5 +1,4 @@
 all:
-	rm *.o *.a
 	cc -Wall -c stupidlib.c
 	ar -cvq libstupid.a stupidlib.o
 	cc -o test_c test.c -L. -lstupid

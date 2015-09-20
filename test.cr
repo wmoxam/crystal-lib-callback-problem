@@ -1,15 +1,13 @@
 @[Link("stupid")]
 lib Stupid
   alias CStr = UInt8*
-  alias Callback = (Void* -> (CStr))
+  alias Callback = -> (CStr)
 
   fun print_and_free(Callback)
 end
 
-cb = -> (data : Void*) {
-  i = (data as Int32*).hash
-
-  "Got: #{i}.".to_unsafe
+cb = -> () {
+  "Hello there".to_unsafe
 }
 
 Stupid.print_and_free(cb)

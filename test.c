@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static char* _cb(void *data) {
+static char* _cb() {
   char *buf = malloc(16);
-  snprintf(buf, 16, "Got: %d.", (int)(uintptr_t)data);
+  snprintf(buf, 16, "Hello There");
 
   return buf;
 }
